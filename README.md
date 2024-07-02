@@ -42,3 +42,8 @@ ________________________________________________________________________________
 The information will be updated every two seconds and the web page will be back in control
 
 The above code will display the last movement recorded in the robot’s database, and the value zero will be assigned if the robot does not move.
+
+
+End..
+
+*** Cout << " Thank you For reading " << endl ; ***
