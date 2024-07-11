@@ -6,37 +6,57 @@ A new file called last_movement has been added, which appears as an icon to be c
 ___________________________________________________________________________________________________________________
 Code :
 
-<?php
+#### <?php
 
 $servername = "localhost";
+
 $username = "root";
+
 $password = "";
+
 $DBname = "robot";
+
 $conn = mysqli_connect($servername,$username,$password,$DBname);
+
 if(!$conn){
-    die("connection failed". mysqli_connect_error().'<br>');
+
+ die("connection failed". mysqli_connect_error().'<br>');
+
 }
+
 else{
-    echo 'conncted successfully <br>';
+
+ echo 'conncted successfully <br>';
+
 }
 
 $sql = 'SELECT direction FROM robotmove ORDER BY id DESC LIMIT 1';
+
 $result = mysqli_query($conn, $sql);
 
 // Fetch the result
-if(mysqli_num_rows($result) == 0){
-    echo "the robot has not moved".'<br>';
-}
+
+if(mysqli_num_rows($result) == 0)
+
+{
+
+ echo "the robot has not moved".'<br>';
+ 
+ }
+
 else{
-    $row = mysqli_fetch_assoc($result);
+
+ $row = mysqli_fetch_assoc($result);
     echo $row['direction'];   
 }
+
 header ("Refresh: 2 ; url=index.html"); 
+
 exit ; 
-?>
 
+ ?>
 
-code link >> ( C:\Users\nwaf1\Downloads\apache N\htdocs\robot\last_movmennt.php ) 
+ ## code link : C:\apache N\htdocs\robot\last_movmennt.php
 ___________________________________________________________________________________________________________________
 
 The information will be updated every two seconds and the web page will be back in control
